@@ -2,25 +2,6 @@
 Campus Course & Records Manager (CCRM)
 
 Project Overview The Campus Course & Records Manager (CCRM) is a console-based Java application designed to manage student records, courses, and enrollments for an educational institution. It demonstrates core Java SE principles, including a layered architecture, object-oriented design, and modern Java APIs like Streams and NIO.2 for file handling.
-Evolution of Java (Short Timeline)
-1991: Java project (Green Project) started by James Gosling at Sun Microsystems.
-
-1995: Official release of Java 1.0 with “Write Once, Run Anywhere” (WORA) promise.
-
-1997: Release of JDK 1.1; Java Community Process (JCP) established.
-
-1998: Java 2 (J2SE 1.2) released introducing Swing and Collections framework.
-
-2006: Sun renames J2SE, J2EE, J2ME to Java SE, Java EE, Java ME respectively.
-
-2009: Oracle acquires Sun Microsystems and later takes stewardship of Java.
-
-2014: Java 8 released with Lambda expressions and Stream API.
-
-2017: Java 9 introduces module system.
-
-2021: Java 17 released as a long-term support (LTS) version.
-Here is the information without using tables:
 
 Evolution of Java (Short Timeline)
 In 1991, James Gosling started the Green Project at Sun Microsystems, which became Java.
@@ -90,6 +71,27 @@ Select Run As > Java Application.
 For more options, go to Run > Run Configurations to set arguments or environment variables, then run.
 
 2025: Java continues to evolve with new features and performance improvements.
+Mapping: Syllabus Topic → Project Implementation
+
+[cite_start]This table maps the mandatory technical requirements to their implementation locations within the project's source code, as required[cite: 136].
+
+| Syllabus Topic/Requirement | Location in Project (src/ folder) |
+| :--- | :--- |
+| *OOP: Encapsulation* | [cite_start]edu.ccrm.domain.Student and Course classes use private fields with public getters/setters[cite: 59]. |
+| *OOP: Inheritance & Abstraction* | [cite_start]edu.ccrm.domain.Person is an abstract class [cite: 61] [cite_start]extended by Student and Instructor[cite: 60]. |
+| *OOP: Polymorphism* | [cite_start]The TranscriptService uses a Person reference to invoke overridden toString() methods on Student and Instructor objects[cite: 62]. |
+| *Interfaces* | [cite_start]edu.ccrm.io.Persistable is an interface implemented by services that handle data import/export[cite: 69]. |
+| *Enums with Constructors* | [cite_start]edu.ccrm.domain.Semester and edu.ccrm.domain.Grade are enums with custom fields and constructors[cite: 74, 27]. |
+| *Lambdas & Functional Interfaces* | [cite_start]The CourseService class uses lambda expressions with the Stream API for filtering courses by instructor or department[cite: 72, 23]. |
+| *Design Pattern: Singleton* | [cite_start]edu.ccrm.config.AppConfig is implemented as a Singleton to manage global application settings[cite: 80]. |
+| *Design Pattern: Builder* | [cite_start]The Course class has a static nested CourseBuilder class for object construction[cite: 81]. |
+| *Custom Exceptions* | [cite_start]edu.ccrm.util.exceptions.DuplicateEnrollmentException and MaxCreditLimitExceededException are custom checked exceptions[cite: 86, 87, 88]. |
+| *File I/O (NIO.2)* | [cite_start]edu.ccrm.io.BackupService uses Path and Files for creating timestamped backup folders and copying files[cite: 91, 32]. |
+| *I/O with Streams* | [cite_start]The ImportExportService uses Files.lines() (a Stream) to read and process lines from CSV files[cite: 92]. |
+| *Recursion* | [cite_start]edu.ccrm.util.FileUtils contains a recursive method to calculate the total size of a backup directory[cite: 33]. |
+| *Date/Time API* | [cite_start]The Student class uses LocalDate for date fields [cite: 18][cite_start], and backups use LocalDateTime for timestamps[cite: 94]. |
+| *Nested Classes* | [cite_start]A static nested CourseBuilder is in Course; an inner class is used for a custom comparator in StudentService[cite: 67]. |
+| *Assertions* | [cite_start]Assertions are used in service classes to check for invariants like non-null IDs or valid credit values[cite: 89]. |
 
 Main program:
 <img width="1593" height="824" alt="Screenshot 2025-09-25 002717" src="https://github.com/user-attachments/assets/7c495586-8640-41cf-b528-6c051390a2dd" />
