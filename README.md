@@ -91,6 +91,11 @@ For more options, go to Run > Run Configurations to set arguments or environment
 
 2025: Java continues to evolve with new features and performance improvements.
 
+Main program:
+<img width="1593" height="824" alt="Screenshot 2025-09-25 002717" src="https://github.com/user-attachments/assets/7c495586-8640-41cf-b528-6c051390a2dd" />
+Output:
+<img width="568" height="242" alt="image" src="https://github.com/user-attachments/assets/276f8098-ee5a-44df-a527-5f75d0b1d586" />
+
 
 
 
